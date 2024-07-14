@@ -1,0 +1,24 @@
+.text-to-speech-preview{
+    padding-top: 8rem;
+    padding-bottom: 10rem;
+   padding-left: 12rem;
+   padding-right: 5rem;
+}
+
+.text-to-speech-loading{
+  padding-top: 4rem;
+  padding-left: 6rem;
+}
+
+.text-to-speech-audio{
+  margin-left: 27%;
+    margin-top: 40%;
+}
+
+.alert-message-sec{
+    position: fixed;
+    width: max-content;
+    margin-left: 2.5%;
+    transform: translateY(75%);
+    z-index: 1;
+}

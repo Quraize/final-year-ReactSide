@@ -1,0 +1,72 @@
+.conversion-main-sec{
+    display: flex;
+    height: 100vh;
+    width: 100%;
+}
+
+.conversion-form-sec{
+    flex: 50%;
+}
+
+.conversion-create-post-sec{
+    flex: 50%;
+}
+
+.main-heading{
+    text-align: center;
+    padding-top: 6rem;
+    padding-left: 10rem;
+    padding-right: 10rem;
+    padding-bottom: 2rem;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 35px;
+}
+
+.heading-italic{
+    color: rgba(41, 51, 194, 0.829);
+}
+
+.input-main-sec {
+    padding-right: 5rem;
+    padding-left: 5rem;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+  
+  }
+  
+  .input-inputgroup {
+    margin-bottom: 0.75rem;
+    border-radius: 15px;
+    border-color: #e5e7eb;
+    width: 100%;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+    background-color: #ffffff;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+      0 4px 6px -2px rgba(0, 0, 0, 0.479);
+  }
+  
+  
+  .input-submit-sec-button{
+      cursor: pointer;
+  }
+  
+  .input-submit-sec-button:hover{
+      background: rgb(153, 151, 151);
+  }
+  
+  .input-surprise-sec{
+      padding-top: 1.5rem;
+      padding-left: 12.5rem;
+  }
+  
+  .input-surprise-button{
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+      0 4px 6px -2px rgba(0, 0, 0, 0.479);
+      cursor:pointer;
+      font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  
+  .input-surprise-button:hover{
+      scale: 1.04;
+  }

@@ -1,0 +1,15 @@
+.animations-main-sec{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+}
+
+@media only screen and(max-width: 768px){
+    .animations-main-sec{
+        all: unset;
+    }
+}

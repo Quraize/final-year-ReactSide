@@ -1,0 +1,7 @@
+.landing-page{
+    overflow-y: hidden;
+    overflow-x: hidden;
+    max-width: 100% !important;
+    background: rgb(109,106,106);
+    background: linear-gradient(117deg, rgba(109,106,106,1) 0%, rgba(168,164,164,1) 0%, rgba(172,166,166,1) 8%, rgba(205,197,197,1) 89%, rgba(244,234,234,1) 100%);
+}

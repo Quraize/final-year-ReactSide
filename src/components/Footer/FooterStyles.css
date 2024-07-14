@@ -1,0 +1,131 @@
+.footer-main-sec{
+    display: grid; 
+    padding-left: 5rem;
+    padding-right: 4rem; 
+    padding-top: 4rem;
+    padding-bottom: 4rem; 
+    gap: 1.5rem; 
+    color: #D1D5DB; 
+    background-color: rgba(29, 28, 28, 0.212) !important;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px ;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+
+.footer-main-heading{
+    width: 100%; 
+    font-size: 1.9rem;
+    line-height: 2.25rem; 
+    font-weight: 700; 
+    color: #0c0c0c;
+}
+
+.footer-main-para{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    color: black;
+    font-size: 19px;
+}
+
+.footer-social-icons{
+    display: flex; 
+   padding-bottom: 3rem;
+    justify-content: space-evenly; 
+}
+
+.icon-faceboook:hover{
+    color: #2023cc;
+    cursor: pointer;
+}
+
+.icon-twitter:hover{
+    color:rgb(58, 163, 204);
+    cursor: pointer;
+}
+
+.icon-linkedin:hover{
+    color:rgb(82, 185, 226);
+    cursor: pointer;
+}
+
+.icon-Youtube:hover{
+    color:red;
+    cursor: pointer;
+}
+
+.icon-Insta:hover{
+    color: rgba(238,42,123,1);
+    cursor: pointer;
+}
+
+.footer-content-list{
+    display: flex; 
+    margin-top: 1.5rem; 
+    justify-content: space-evenly; 
+}
+
+.content-list-heading{
+    font-size: 25px;
+    line-height: 1.75rem; 
+    font-weight: 550; 
+    color: #0c0c0c;
+}
+
+.content-list-items{
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem; 
+    font-size:16px;
+    font-weight: 550;
+    color: black;
+    transition-duration: 0.5s;
+    transition: ease-in;
+}
+
+.content-list-items:hover{
+    scale: 1.1;
+}
+
+@media only screen and (max-width: 768px){
+    .footer-main-sec{
+        padding-left: 2rem !important;
+    }
+
+    .footer-content-list{
+        all: unset;
+        text-align: center !important;
+    }
+
+    .content-list-heading{
+        font-size: 26px;
+        font-weight: 600; 
+        color: #0c0c0c;
+    }
+}
+
+@media (min-width: 768px) { 
+    .footer-social-icons{
+        width: 75%;
+    }
+}
+
+@media (min-width: 1024px) { 
+    .footer-main-sec{
+    grid-template-columns: repeat(3, minmax(0, 1fr)); 
+    }
+    .footer-main-heading{
+        font-size: 2rem;
+        line-height: 2rem; 
+    }
+
+    .footer-content-list{
+        grid-column: span 2 / span 2; 
+    }
+}
+
+@media (min-width: 1280px) { 
+    .footer-main-heading{
+        font-size: 2.5rem;
+        line-height: 1; 
+    }
+}

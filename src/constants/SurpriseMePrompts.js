@@ -1,0 +1,17 @@
+export const SurpriseMePrompts = [
+    'A panda scientist mixing chemicals',
+    'A pencil and watercolor drawing of a bright city in the future with flying cars',
+    'An oil painting portrait od a capybara wearing uniform',
+    'An astronaut lounging in a tropical resort in space',
+    'Dogs playing cards',
+    'teddy bears shopping for groceries in japan, ukiyo-e',
+    'An oil painting of robots playing basketball',
+    'A painting of a fox in the style of Starry Night',
+    'A stained glass window depicting a hamburger and french fries',
+    'A gangster looking cat with dogs as his bodygaurd',
+    'A mafia looking panda getting out of the car',
+    'One piece character wearing suite and sneakers',
+    'Two futuristic towers with a skybridge covered in lush foliage, digital art',
+    'A samurai riding a Horse on Mars, lomography',
+    'A dinosaur exploring a third world country, photography',   
+]

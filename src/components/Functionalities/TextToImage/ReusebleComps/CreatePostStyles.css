@@ -1,0 +1,24 @@
+.create-post-preview{
+    padding-top: 8rem;
+    padding-bottom: 10rem;
+    padding-left: 10rem;
+    padding-right: 12rem;
+}
+
+.create-post-image-self{
+    margin-left: 27%;
+    margin-top: 15%;
+    height: 380px;
+    width: 300px;
+    border-radius: 9px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+
+}
+
+.alert-message-sec{
+    position: fixed;
+    width: max-content;
+    margin-left: 13.5%;
+    transform: translateY(75%);
+    z-index: 1;
+}
