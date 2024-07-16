@@ -18,14 +18,10 @@ const SuggestionItems = [
     },
     {
         key: 2,
-        content: "This service is more effective on major world languages i.e. ",
+        content: "This service is ONLY effective in ",
         material: [
             { key: 1, content: "English." },
-            { key: 2, content: "Russian." },
-            { key: 3, content: "Urdu." },
-            { key: 4, content: "Hindi." },
-            { key: 4, content: "Spanish." },
-            { key: 4, content: "French." },
+            { key: 2, content: "English." },
         ],
     },
     {

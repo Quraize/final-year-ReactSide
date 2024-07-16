@@ -6,6 +6,25 @@
 }
 
 .report-self{
-    margin-top: 10rem;
-    padding-left: 12rem;
+    margin-top: 8rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
+}
+
+.report-element{
+    margin-bottom: 1rem;
+}
+
+.report-button{
+    margin-left: 8rem;
+}
+
+.custom-table {
+    border-radius: 13px;
+    overflow: hidden; /* This ensures the border-radius is applied to the table */
+}
+
+.custom-table th,
+.custom-table td {
+    border-color: #dee2e6;
 }

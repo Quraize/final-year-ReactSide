@@ -67,7 +67,7 @@ export default function CreateReport({ Input }) {
         <div>
             {showError && <div className='report-alert-message-sec'><AlertMessage Variant={'danger'} message={errorMessage} /></div>}
             {Loading ? ( // Show loader when loading is true
-                <Lottie animationData={Loader} className="text-to-speech-loading" />
+                <Lottie animationData={Loader} className="senitment-analysis-loading" />
             ) : basicResult ? (
                 <div className='report-self'>
                     {redArr.includes(basicResult) ? (
