@@ -19,7 +19,7 @@ export default function CreatePost({ newPrompt }) {
         try {
           setLoading(true);
           const response = await fetch(
-            "http://localhost:8000/conversion/texttoimg",
+            "http://localhost:7800/conversion/texttoimg",
             {
               method: "POST",
               headers: {
