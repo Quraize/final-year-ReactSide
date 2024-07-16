@@ -20,7 +20,7 @@ export default function CreateSpeech({Input}) {
       try {
         setLoading(true);
         const response = await fetch(
-          "http://localhost:8000/conversion/texttospeech",
+          "http://localhost:7800/conversion/texttospeech",
           {
             method: "POST",
             headers: {

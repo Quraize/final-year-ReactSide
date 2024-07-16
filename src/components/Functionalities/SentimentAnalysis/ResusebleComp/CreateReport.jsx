@@ -23,7 +23,7 @@ export default function CreateReport({ Input }) {
                 try {
                     setLoading(true);
                     const response = await fetch(
-                        "http://localhost:8000/analysis/sentiment",
+                        "http://localhost:7800/analysis/sentiment",
                         {
                             method: "POST",
                             headers: {
