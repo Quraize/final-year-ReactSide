@@ -3,7 +3,9 @@ import "./TextToAudioFuncStyles.css";
 import Form from "react-bootstrap/Form";
 import Suggestions from "../TextToImage/ReusebleComps/Suggestions";
 import Button from "react-bootstrap/esm/Button";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const SuggestionItems = [
   {
@@ -47,43 +49,43 @@ export default function TextToAudioFunc() {
     urdu: {
       dispayName: 'Urdu',
       speaker: [
-        {name:"Male", value:'hindi_male' },
-        {name: "Female", value: 'hindi_female'}
+        { name: "Male", value: 'hindi_male' },
+        { name: "Female", value: 'hindi_female' }
       ]
     },
     hindi: {
       dispayName: 'Hindi',
       speaker: [
-        {name:"Male", value:'hindi_male' },
-        {name: "Female", value: 'hindi_female'}
+        { name: "Male", value: 'hindi_male' },
+        { name: "Female", value: 'hindi_female' }
       ]
     },
     en: {
       dispayName: 'English',
       speaker: [
-        {name:"Male", value:'en_99' },
-        {name: "Female", value: 'en_98'}
+        { name: "Male", value: 'en_12' },
+        { name: "Female", value: 'en_11' }
       ]
     },
     es: {
       dispayName: 'Spanish',
       speaker: [
-        {name:"Male", value:'es_99' },
-        {name: "Female", value: 'es_98'}
+        { name: "Male", value: 'es_99' },
+        { name: "Female", value: 'es_98' }
       ]
     },
     de: {
       dispayName: 'German',
       speaker: [
-        {name:"Male", value:'karlsson' },
-        {name: "Female", value: 'eva_k'}
+        { name: "Male", value: 'karlsson' },
+        { name: "Female", value: 'eva_k' }
       ]
     },
     fr: {
       dispayName: 'French',
       speaker: [
-        {name:"Male", value:'fr_0' },
-        {name: "Female", value: 'fr_7'}
+        { name: "Male", value: 'fr_0' },
+        { name: "Female", value: 'fr_7' }
       ]
     },
   }
@@ -107,7 +109,7 @@ export default function TextToAudioFunc() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setLaoding(true);
-    setTimeout(()=>{
+    setTimeout(() => {
       const Data = {
         input_text: inputText,
         language: language,
@@ -122,24 +124,30 @@ export default function TextToAudioFunc() {
     // Here you can handle form submission, like sending data to an API or updating state
   };
 
+  useEffect(() => {
+    AOS.init({
+      duration: 1500,
+      easing: "ease-in-out-back",
+    });
+  }, []);
 
   return (
     <div className="text-to-speech-func-main-sec">
-      <div className="text-to-speech-create-sec">
+      <div className="text-to-speech-create-sec" data-aos="fade-right">
         <CreateSpeech Input={formData} />
       </div>
       <div className="text-to-speech-input-sec">
-        <h1 className="text-to-speech-input-main-heading">
+        <h1 className="text-to-speech-input-main-heading" data-aos="fade-left">
           Provide suitable Text to change into{" "}
           <i className="text-to-speech-heading-italic">Speech</i>
         </h1>
         <div className="text-to-speech-input-self">
-          <Form onSubmit={handleSubmit}>
+          <Form onSubmit={handleSubmit} data-aos="fade-left">
             <div className="text-to-speech-selection-sec">
               <div className="lanuage-select-sef">
                 <Form.Select id="language" value={language} onChange={handleLanguageChange}>
                   <option value="">Select Language</option>
-                  {Object.keys(languages).map((lang)=>(
+                  {Object.keys(languages).map((lang) => (
                     <option key={lang} value={lang}>{languages[lang].dispayName}</option>
                   ))}
                 </Form.Select>
@@ -147,7 +155,7 @@ export default function TextToAudioFunc() {
               <div className="speaker-select-sef">
                 <Form.Select id="speaker" value={speaker} onChange={handleSpeakerChange} disabled={!speakersEnabled}>
                   <option value="">Select Speaker</option>
-                  {speakerOptions.map((speaker)=>(
+                  {speakerOptions.map((speaker) => (
                     <option key={speaker.value} value={speaker.value}>{speaker.name}</option>
                   ))}
                 </Form.Select>
@@ -157,14 +165,14 @@ export default function TextToAudioFunc() {
               <Form.Control id="inputText" placeholder="Your text goes here." as={"textarea"} rows={3} value={inputText} onChange={handleInputChange} />
             </div>
             <div className="text-to-speech-input-submit-sec">
-            <Button type="button" variant="success" onClick={handleSubmit}>
-              {Loading ? "Sending Request..": "Generate"}
-            </Button>
+              <Button type="button" variant="success" onClick={handleSubmit} data-aos="fade-left">
+                {Loading ? "Sending Request.." : "Generate"}
+              </Button>
             </div>
           </Form>
         </div>
-        <div>
-        <Suggestions Items={SuggestionItems} />
+        <div data-aos="fade-left">
+          <Suggestions Items={SuggestionItems} />
         </div>
       </div>
     </div>

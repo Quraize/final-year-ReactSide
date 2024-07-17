@@ -110,7 +110,7 @@ export default function TextToImagePrompt() {
         </div>
         <Suggestions Items={Suggestionitems}/>
       </div>
-      <div className="conversion-create-post-sec">
+      <div className="conversion-create-post-sec" data-aos="fade-left">
         <CreatePost newPrompt={shoWPrompt} />
       </div>
     </div>

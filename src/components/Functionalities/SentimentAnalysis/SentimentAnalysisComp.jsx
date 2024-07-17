@@ -1,9 +1,11 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './SentimentAnalysisStyles.css';
 import Form from "react-bootstrap/Form";
 import Button from 'react-bootstrap/esm/Button';
 import Suggestions from '../TextToImage/ReusebleComps/Suggestions';
 import CreateReport from './ResusebleComp/CreateReport';
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const SuggestionItems = [
     {
@@ -59,15 +61,22 @@ export default function SentimentAnalysisComp() {
         }, 1500)
 
     }
+
+    useEffect(() => {
+        AOS.init({
+          duration: 1500,
+          easing: "ease-in-out-back",
+        });
+      }, []);
     return (
         <div className="sentiment-analysis-main-sec">
             <div className="sentiment-analysis-input-sec">
-                <h1 className="sentiment-analysis-input-main-heading">
+                <h1 className="sentiment-analysis-input-main-heading" data-aos="fade-right">
                     Provide suitable Comments/Messages to be{" "}
                     <i className="sentiment-analysis-heading-italic">Analyzed</i>
                 </h1>
                 <div className='sentiment-analysis-input-self'>
-                    <Form onSubmit={handleSubmit}>
+                    <Form onSubmit={handleSubmit} data-aos="fade-right">
                         <div className='sentiment-analysis-select-sec'>
                             <Form.Select id='type' value={type} onChange={handleTypeChange}>
                                 <option value="">Select Analysis type</option>
@@ -88,17 +97,17 @@ export default function SentimentAnalysisComp() {
                         />
                         </div>
                         <div className='sentiment-analysis-input-submit-sec'>
-                        <Button type="button" variant="success" onClick={handleSubmit}>
+                        <Button type="button" variant="success" onClick={handleSubmit} data-aos="fade-right">
                             {Loading ? "Sending Request..": "Submit"}
                         </Button>
                         </div>
                     </Form>
                 </div>
-                <div>
+                <div data-aos="fade-right">
                     <Suggestions Items={SuggestionItems}/>
                 </div>
             </div>
-            <div className="sentiment-analysis-report-sec">
+            <div className="sentiment-analysis-report-sec" data-aos="fade-left">
                 <CreateReport Input={formData}/>
             </div>
         </div>

@@ -74,7 +74,7 @@ export default function CreateSpeech({Input}) {
     <div>
      {showError && <div className="alert-message-sec"><AlertMessage Variant={'danger'} message={errorMessage}/></div>}
      {loading ? ( // Show loader when loading is true
-        <Lottie animationData={Loader} className="text-to-speech-loading" />
+        <div><Lottie animationData={Loader} className="text-to-speech-loading" /></div>
       ) : audioSrc ? ( // Show image if available
         <audio controls src={audioSrc} className="text-to-speech-audio"/>
       ) : (
