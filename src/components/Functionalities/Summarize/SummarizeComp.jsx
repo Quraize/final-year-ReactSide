@@ -9,7 +9,11 @@ import ReportComp from './ReportComp/ReportComp';
 const SuggestionItems = [
   {
     key: 1,
-    content: "Please do not make in the Text such as",
+    content: "Your summary legnth must be smaller than your source text.",
+  },
+  {
+    key: 2,
+    content: "Please refrain from offensive comments, including",
     material: [
       { key: 1, content: "ethinic." },
       { key: 2, content: "voilent." },
@@ -18,19 +22,14 @@ const SuggestionItems = [
     ],
   },
   {
-    key: 2,
-    content: "This service is more effective on major world languages i.e. ",
+    key: 3,
+    content: "This service is mostly effective in language, ",
     material: [
       { key: 1, content: "English." },
-      { key: 2, content: "Russian." },
-      { key: 3, content: "Urdu." },
-      { key: 4, content: "Hindi." },
-      { key: 4, content: "Spanish." },
-      { key: 4, content: "French." },
     ],
   },
   {
-    key: 3,
+    key: 4,
     content: "After hitting Genereate, Wait unitll you get some response. ",
   },
 ];
@@ -38,90 +37,38 @@ const SuggestionItems = [
 
 function SummarizeComp() {
   const [formData, setFormData] = useState(null);
-  const [language, setLanguage] = useState('');
-  const [speaker, setSpeaker] = useState('');
   const [inputText, setInputText] = useState('');
-  const [speakersEnabled, setSpeakersEnabled] = useState(false);
-  const [Loading, setLaoding] = useState(false);
-  const [speakerOptions, setSpeakerOptions] = useState([])//state to store speaker options
-
-  const languages = {
-    urdu: {
-      dispayName: 'Urdu',
-      speaker: [
-        { name: "Male", value: 'hindi_male' },
-        { name: "Female", value: 'hindi_female' }
-      ]
-    },
-    hindi: {
-      dispayName: 'Hindi',
-      speaker: [
-        { name: "Male", value: 'hindi_male' },
-        { name: "Female", value: 'hindi_female' }
-      ]
-    },
-    en: {
-      dispayName: 'English',
-      speaker: [
-        { name: "Male", value: 'en_12' },
-        { name: "Female", value: 'en_11' }
-      ]
-    },
-    es: {
-      dispayName: 'Spanish',
-      speaker: [
-        { name: "Male", value: 'es_99' },
-        { name: "Female", value: 'es_98' }
-      ]
-    },
-    de: {
-      dispayName: 'German',
-      speaker: [
-        { name: "Male", value: 'karlsson' },
-        { name: "Female", value: 'eva_k' }
-      ]
-    },
-    fr: {
-      dispayName: 'French',
-      speaker: [
-        { name: "Male", value: 'fr_0' },
-        { name: "Female", value: 'fr_7' }
-      ]
-    },
-  }
-
-  const handleLanguageChange = (e) => {
-    const selectedLanguage = e.target.value;
-    setLanguage(selectedLanguage);
-    setSpeakersEnabled(selectedLanguage !== '');
-    setSpeaker('');
-    setSpeakerOptions(languages[selectedLanguage]?.speaker || []);
-  };
-
-  const handleSpeakerChange = (e) => {
-    setSpeaker(e.target.value);
-  };
+  const [maxLength, setMaxLength] = useState('');
+  const [minLength, setMinLength] = useState('');
+  const [Loading, setLoading] = useState(false);
 
   const handleInputChange = (e) => {
     setInputText(e.target.value);
   };
 
+  const handleMaxLengthChange = (e) => {
+    setMaxLength(Number(e.target.value));
+  };
+
+  const handleMinLengthChange = (e) => {
+    setMinLength(Number(e.target.value));
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    setLaoding(true);
+    setLoading(true);
     setTimeout(() => {
       const Data = {
-        input_text: inputText,
-        language: language,
-        speaker: speaker,
+        article: inputText,
+        maxLength: maxLength,
+        minLength: minLength,
       };
       setFormData(Data);
-      setLaoding(false);
+      setLoading(false);
       setInputText('');
-      setLanguage("");
-      setSpeaker('');
-    }, 1500)
-    // Here you can handle form submission, like sending data to an API or updating state
+      setMaxLength('');
+      setMinLength('');
+    }, 1500);
   };
 
   useEffect(() => {
@@ -144,28 +91,42 @@ function SummarizeComp() {
         <div className="text-to-speech-input-self">
           <Form onSubmit={handleSubmit} data-aos="fade-left">
             <div className="text-to-speech-selection-sec">
-              <div className="lanuage-select-sef">
-                <Form.Select id="language" value={language} onChange={handleLanguageChange}>
-                  <option value="">Select Language</option>
-                  {Object.keys(languages).map((lang) => (
-                    <option key={lang} value={lang}>{languages[lang].dispayName}</option>
-                  ))}
-                </Form.Select>
+              <div className="length-input-sef">
+                <Form.Control
+                  type="number"
+                  id="maxLength"
+                  placeholder="Maximum Length"
+                  value={maxLength}
+                  onChange={handleMaxLengthChange}
+                />
               </div>
-              <div className="speaker-select-sef">
-                <Form.Select id="speaker" value={speaker} onChange={handleSpeakerChange} disabled={!speakersEnabled}>
-                  <option value="">Select Speaker</option>
-                  {speakerOptions.map((speaker) => (
-                    <option key={speaker.value} value={speaker.value}>{speaker.name}</option>
-                  ))}
-                </Form.Select>
+              <div className="length-input-sef">
+                <Form.Control
+                  type="number"
+                  id="minLength"
+                  placeholder="Minimum Length"
+                  value={minLength}
+                  onChange={handleMinLengthChange}
+                />
               </div>
             </div>
             <div className="text-to-speech-input-self">
-              <Form.Control id="inputText" placeholder="Your text goes here." as={"textarea"} rows={3} value={inputText} onChange={handleInputChange} />
+              <Form.Control
+                id="inputText"
+                placeholder="Your text goes here."
+                as="textarea"
+                rows={3}
+                value={inputText}
+                onChange={handleInputChange}
+              />
             </div>
             <div className="text-to-speech-input-submit-sec">
-              <Button type="button" variant="success" onClick={handleSubmit} data-aos="fade-left">
+              <Button
+                type="button"
+                variant="success"
+                onClick={handleSubmit}
+                data-aos="fade-left"
+              >
                 {Loading ? "Sending Request.." : "Generate"}
               </Button>
             </div>
@@ -176,7 +137,7 @@ function SummarizeComp() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export default SummarizeComp

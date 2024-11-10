@@ -71,7 +71,6 @@ export default function NavbarComp() {
                   </Dropdown.Menu>
               </Dropdown>
               <Nav.Link className="nav-feature" as={motion.span} variants={NavbarVariantDesktop} initial={isHoveringFeature ? "hoverInitial" : "initial" } animate={isHoveringFeature ? "hoverFinale" : "final" } onHoverStart={() => setIsHoveringFeature(true)} onHoverEnd={() => setIsHoveringFeature(false)}>Features</Nav.Link>
-              <Nav.Link href="#memes" className="nav-sign-up" as={motion.span} variants={NavbarVariantDesktop} initial={isHoveringSign ? "hoverInitial" : "initial" } animate={isHoveringSign ? "hoverFinale" : "final" } onMouseOver={() => setIsHoveringSign(true)} onMouseLeave={() => setIsHoveringSign(false)}>Sign Up</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
