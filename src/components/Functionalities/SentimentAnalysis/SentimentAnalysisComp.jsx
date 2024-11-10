@@ -6,6 +6,8 @@ import Suggestions from '../TextToImage/ReusebleComps/Suggestions';
 import CreateReport from './ResusebleComp/CreateReport';
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const SuggestionItems = [
     {
@@ -82,7 +84,6 @@ export default function SentimentAnalysisComp() {
                                 <option value="">Select Analysis type</option>
                                 <option value="sentiment">Sentiment Analysis</option>
                                 <option value="emotion">Emotional Analysis</option>
-                                <option value="hate_speech">Hate Speech</option>
                             </Form.Select>
                         </div>
                         <div className='sentiment-analysis-text-input'>

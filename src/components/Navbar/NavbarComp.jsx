@@ -50,22 +50,21 @@ export default function NavbarComp() {
               <Dropdown id="dropdown-basic" className="nav-dropdown nav-dropdown-evolution" as={motion.span} variants={NavbarVariantDesktop} initial={isHoveringEvolution ? "hoverInitial" : "initial" } animate={isHoveringEvolution ? "hoverFinale" : "final" } onHoverStart={() => setIsHoveringEvolution(true)} onHoverEnd={() => setIsHoveringEvolution(false)}>
                  <Dropdown.Toggle as={"span"}>Evaluation</Dropdown.Toggle>
                   <Dropdown.Menu as={"div"} variant={"dark"} className="nav-dropdown-menu">
-                    <Dropdown.Item>Summarize</Dropdown.Item>
-                    <Dropdown.Item>Language Scoring</Dropdown.Item>
-                    <Dropdown.Item>Topic Tagging / Keyword</Dropdown.Item>
+                    <Dropdown.Item href="/summarization">Summarize</Dropdown.Item>
+                    <Dropdown.Item href="/scoring">Topic Tagging / Keyword</Dropdown.Item>
                   </Dropdown.Menu>
               </Dropdown>
               <Dropdown id="dropdown-basic" className="nav-dropdown nav-dropdown-analysis" as={motion.span} variants={NavbarVariantDesktop} initial={isHoveringAnalysis ? "hoverInitial" : "initial" } animate={isHoveringAnalysis ? "hoverFinale" : "final" } onHoverStart={() => setIsHoveringAnalysis(true)} onHoverEnd={() => setIsHoveringAnalysis(false)}>
                  <Dropdown.Toggle as={"span"}>Analysis</Dropdown.Toggle>
                   <Dropdown.Menu as={"div"} variant={"dark"} className="nav-dropdown-menu">
-                    <Dropdown.Item>Language Detection</Dropdown.Item>
+                    <Dropdown.Item href="/languagedetect">Language Detection</Dropdown.Item>
                     <Dropdown.Item href="/sentimentanalysis">Sentiment Analysis</Dropdown.Item>
                   </Dropdown.Menu>
               </Dropdown>
               <Dropdown id="dropdown-basic" className="nav-dropdown nav-dropdown-conversion" as={motion.span} variants={NavbarVariantDesktop} initial={isHoveringConversion ? "hoverInitial" : "initial" } animate={isHoveringConversion ? "hoverFinale" : "final" } onHoverStart={() => setIsHoveringConversion(true)} onHoverEnd={() => setIsHoveringConversion(false)}>
                  <Dropdown.Toggle as={"span"}>Conversion</Dropdown.Toggle>
                   <Dropdown.Menu as={"div"} variant={"dark"} className="nav-dropdown-menu">
-                    <Dropdown.Item>Translation</Dropdown.Item>
+                    <Dropdown.Item href="/translation">Translation</Dropdown.Item>
                     <Dropdown.Item href="/texttospeech">Text-to-Speech</Dropdown.Item>
                     <Dropdown.Divider />
                     <Dropdown.Item href="/texttoimage">Text-to-Image</Dropdown.Item>

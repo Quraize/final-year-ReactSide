@@ -1,25 +1,23 @@
 /* eslint-disable react/prop-types */
 import AnimationData1 from "../../../../assets/texttoimage.json";
 import Loader from "../../../../assets/imageloader.json";
-import AlertMessage from "./AlertMessage";
 import Lottie from "lottie-react";
 import "./CreatePostStyles.css";
 import { useState, useMemo, useEffect } from "react";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function CreatePost({ newPrompt }) {
   const [image, setImage] = useState("");
   const [loading, setLoading] = useState(false);
-  const [errorMessage, setErrorMessage] = useState('');
-  const [showError, setshowError] = useState(false);
- 
-  // Use useMemo to trigger handlePost based on prompt changes
+
   const handleGeneration = useMemo(
     () => async () => {
       if (newPrompt) {
         try {
           setLoading(true);
           const response = await fetch(
-            "http://localhost:7800/conversion/texttoimg",
+            "http://localhost:8000/conversion/texttoimg",
             {
               method: "POST",
               headers: {
@@ -29,39 +27,37 @@ export default function CreatePost({ newPrompt }) {
             }
           );
 
-          const imageData = await response.json(); // Assuming response is JSON
+          const imageData = await response.json();
           setLoading(false);
-          if (imageData.success === false || imageData.status === 400) {
-            setshowError(true);
-            setErrorMessage(imageData.message);
-            setTimeout(()=>{
-              setshowError(false);
-            }, 5000);
+
+          if (!response.ok || imageData.success === false) {
+            // Show error toast if the generation fails
+            toast.error(imageData.message || "Failed to generate image.");
             return;
           }
+
+          // On success, update image state and show success toast
           setImage(`data:image/jpeg;base64,${imageData.photo}`);
-          // Update image state
+          toast.success("Image generated successfully!");
         } catch (error) {
-          setshowError(true);
-          setErrorMessage(error.message);
-          setTimeout(()=>{
-            setshowError(false);
-          }, 5000);
+          setLoading(false);
+          // Show error toast on fetch error
+          toast.error(error.message || "An error occurred while generating image.");
         }
       }
     },
     [newPrompt]
   );
- 
+
   useEffect(() => {
     handleGeneration();
-  }, [handleGeneration, newPrompt,]);
+  }, [handleGeneration, newPrompt]);
+
   return (
     <div>
-      {showError && <div className="alert-message-sec"><AlertMessage Variant={'danger'} message={errorMessage}/></div>}
-      {loading ? ( // Show loader when loading is true
+      {loading ? (
         <Lottie animationData={Loader} className="create-post-preview" />
-      ) : image ? ( // Show image if available
+      ) : image ? (
         <img
           src={image}
           alt={newPrompt}
@@ -71,13 +67,8 @@ export default function CreatePost({ newPrompt }) {
           data-aos="zoom-in"
         />
       ) : (
-        // Show Lottie animation if no image or error
-        <Lottie
-          animationData={AnimationData1}
-          className="create-post-preview"
-        />
+        <Lottie animationData={AnimationData1} className="create-post-preview" />
       )}
-        
     </div>
   );
 }

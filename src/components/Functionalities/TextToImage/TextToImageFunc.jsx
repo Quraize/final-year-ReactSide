@@ -96,7 +96,7 @@ export default function TextToImagePrompt() {
               </InputGroup.Text>
             </InputGroup>
 
-            <div className="input-surprise-sec" data-aos="fade-right">
+            <div className="detect-analysis-input-submit-sec" data-aos="fade-right">
               <Button
                 type="button"
                 variant="success"
