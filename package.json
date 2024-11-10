@@ -16,6 +16,7 @@
     "b64-to-blob": "^1.2.19",
     "bootstrap": "^5.3.3",
     "framer-motion": "^11.0.6",
+    "fyp": "file:",
     "lottie-react": "^2.4.0",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
