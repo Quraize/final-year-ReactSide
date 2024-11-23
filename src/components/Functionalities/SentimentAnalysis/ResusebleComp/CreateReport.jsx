@@ -44,7 +44,6 @@ export default function CreateReport({ Input }) {
                     // Success: update result and score, show success toast
                     setBasicResult(reportData.result.output);
                     setScore(reportData.result.probas);
-                    toast.success("Report generated successfully!");
                 } catch (error) {
                     setLoading(false);
                     // Trigger error toast on any fetch error

@@ -85,8 +85,8 @@ function SummarizeComp() {
       </div>
       <div className="text-to-speech-input-sec">
         <h1 className="text-to-speech-input-main-heading" data-aos="fade-left">
-          Provide suitable Text to change into{" "}
-          <i className="text-to-speech-heading-italic">Speech</i>
+          Provide suitable Text to be{" "}
+          <i className="text-to-speech-heading-italic">Summarized</i>
         </h1>
         <div className="text-to-speech-input-self">
           <Form onSubmit={handleSubmit} data-aos="fade-left">

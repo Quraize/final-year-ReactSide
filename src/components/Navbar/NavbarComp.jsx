@@ -70,7 +70,7 @@ export default function NavbarComp() {
                     <Dropdown.Item href="/texttoimage">Text-to-Image</Dropdown.Item>
                   </Dropdown.Menu>
               </Dropdown>
-              <Nav.Link className="nav-feature" as={motion.span} variants={NavbarVariantDesktop} initial={isHoveringFeature ? "hoverInitial" : "initial" } animate={isHoveringFeature ? "hoverFinale" : "final" } onHoverStart={() => setIsHoveringFeature(true)} onHoverEnd={() => setIsHoveringFeature(false)}>Features</Nav.Link>
+              {/*<Nav.Link className="nav-feature" as={motion.span} variants={NavbarVariantDesktop} initial={isHoveringFeature ? "hoverInitial" : "initial" } animate={isHoveringFeature ? "hoverFinale" : "final" } onHoverStart={() => setIsHoveringFeature(true)} onHoverEnd={() => setIsHoveringFeature(false)}>Features</Nav.Link>*/}
             </Nav>
           </Navbar.Collapse>
         </Container>

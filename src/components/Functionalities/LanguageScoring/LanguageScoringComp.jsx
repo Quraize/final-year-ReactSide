@@ -44,9 +44,8 @@ function LanguageScoringComp() {
     setLoading(true);
     setTimeout(() => {
       // Split input into an array based on newlines or other delimiters
-      const textsArray = texts.split("\n").filter((text) => text.trim() !== "");
       const Data = {
-        texts: textsArray,
+        article: texts,
       };
       setFormData(Data);
       setLoading(false);
@@ -69,7 +68,7 @@ function LanguageScoringComp() {
           data-aos="fade-right"
         >
           Provide suitable Comments/Messages for{" "}
-          <i className="detect-analysis-heading-italic">Language Detection</i>
+          <i className="detect-analysis-heading-italic">Keywords</i>
         </h1>
         <div className="detect-analysis-input-self">
           <Form onSubmit={handleSubmit} data-aos="fade-right">
