@@ -15,15 +15,8 @@ const items = [
     detail:`Allowing users to convert written text into spoken audio output. catering to those prefferring auditory content consumption.
     It ensures a personalized experience by customizing`,
     button: "Get Speech",
+    link:"/texttospeech",
     material: [{key: 1, content:'language'}, {key:2, content: 'accent'}, {key:3, content: 'voice preferences'}]
-  },
-  {
-    subHeading: "Translation / NLP",
-    key:2,
-    detail:`It involves converting text from one language to another and analyzing text for meaningful insights
-     respectively.Translation enables users to overcome barriers and `,
-    button: "Translate",
-    material: [{key: 1, content:'communicate across different languages'}, {key:2, content: 'foster global reach'}, {key:3, content: 'be inclusive'}]
   },
   {
     subHeading: "Text-to-Image",
@@ -31,6 +24,7 @@ const items = [
     detail:`It enables users to create visual content directly from prompt, enhancing communication and expression.
       It empowers users to dynamically convert text into images for`,
     button: "Get Image",
+    link:"/texttoimage",
     material: [{key: 1, content:'social media'}, {key:2, content: 'presentaions'}, {key:3, content: 'graphic design'}]
   },
 ]

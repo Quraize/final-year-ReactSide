@@ -108,7 +108,7 @@ export default function NavbarComp() {
               >
                 <Dropdown.Toggle as={"span"}>Analysis</Dropdown.Toggle>
                 <Dropdown.Menu as={"div"} variant={"dark"} className="nav-dropdown-menu">
-                  <Dropdown.Item href="/languagedetect">Language Detection</Dropdown.Item>
+                  <Dropdown.Item href="/languagedetect">Language Detection/Score</Dropdown.Item>
                   <Dropdown.Item href="/sentimentanalysis">Sentiment Analysis</Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>

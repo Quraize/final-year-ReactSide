@@ -5,6 +5,7 @@ import Evaluation from '../components/LandingPageComp/FuncIntroComp/Evaluation';
 import Analysis from '../components/LandingPageComp/FuncIntroComp/Analysis';
 import Conversion from '../components/LandingPageComp/FuncIntroComp/Conversion';
 import Footer from '../components/Footer/Footer';
+import { ToastContainer } from 'react-toastify';
 
 export default function LandingPage() {
   return (
@@ -15,6 +16,7 @@ export default function LandingPage() {
         <Conversion/>
         <Footer/>
         <NavbarComp/>
+        <ToastContainer/>
     </div>
   )
 }

@@ -15,6 +15,7 @@ const items = [
     detail:`It automatically identifies the language of a given text input. It enables users to process and multilingual
     content effectively. Ensuring the services like these, it can facilitates`,
     button: "Detect",
+    link:"/languagedetect",
     material: [{key: 1, content:'globalization'}, {key:2, content: 'localization'}]
   },
   {
@@ -23,6 +24,7 @@ const items = [
     detail:`It involves the automated process of analyzing text data to determine the tone expressed within it.
       This functionality enables users to understand the underlying tones such as`,
     button: "Analyze",
+    link:"/sentimentanalysis",
     material: [{key: 1, content:'positive'}, {key:2, content: 'negative'}, {key:3, content: 'neutral'}]
   }
 ]

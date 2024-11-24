@@ -3,10 +3,16 @@ import Carousel from "react-bootstrap/Carousel";
 import Button from "react-bootstrap/Button";
 import TextPara from "./TextPara";
 import { Box, Typography } from "@mui/material";
+import { useNavigate } from "react-router-dom"; // Import useNavigate from react-router-dom
 
 // eslint-disable-next-line react/prop-types
-export default function RightText({ heading, Items }) {
+export default function RightText({ heading, Items}) {
   const items = [...Items];
+  const navigate = useNavigate(); // Initialize useNavigate
+
+  const handleButtonClick = (link) => {
+    navigate(link); // Navigate to the link passed in props
+  };
 
   return (
     <Box
@@ -88,6 +94,7 @@ export default function RightText({ heading, Items }) {
               >
                 <Button
                   className="func-text-button-self"
+                  onClick={(e)=>handleButtonClick(item.link)} // Attach click handler
                   style={{
                     fontFamily: "Verdana, Geneva, Tahoma, sans-serif",
                     backgroundColor: "rgba(41, 51, 194, 0.829)",

@@ -15,6 +15,7 @@ const items = [
     detail:`It streamlines the process of condensing lengthy passage into concise summaries, perserving key information.
       By employing techniques such as`,
     button: "Summarize",
+    link:"/summarization",
     material: [{key: 1, content:'extractive summarization'}, {key:2, content: 'abstractive summarization'}]
   },
   {
@@ -23,6 +24,7 @@ const items = [
     detail:`It provides users with insights into quality and proficiency of written content. It invloves the assessment and
       evaluation of text based on various linguistic criteria such as`,
     button: "Score",
+    link:"/scoring",
     material: [{key: 1, content:'readability'}, {key:2, content: 'complexity'}, {key:3, content: 'grammatical correctness'}]
   },
   {
@@ -31,6 +33,7 @@ const items = [
     detail:`It invloves the process of automatically assigning descriptive tags or labels to text document or content based on
       their thematic content. Topic tagging algorithm algorithms uses`,
     button: "Topic Tag",
+    link:"/scoring",
     material: [{key: 1, content:'context analyzing'}, {key:2, content: 'semantic analyzing'}]
   }
 ]
