@@ -10,6 +10,7 @@ import LanuageScoring from "./pages/LanuageScoring";
 import SignUpPage from "./pages/SignUpPage";
 import SignInPage from "./pages/SignInPage";
 import ProtectedRoute from "./components/ProtectedRoute";
+import NotFoundPage from "./pages/NotFoundPage";
 import "./App.css";
 
 function App() {
@@ -34,7 +35,7 @@ function App() {
           </Route>
 
           {/* Redirect unknown routes to Sign In */}
-          <Route path="*" element={<SignInPage />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </BrowserRouter>
     </div>
