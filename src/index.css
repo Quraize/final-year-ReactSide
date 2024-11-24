@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Slick Carousel Styles */
+.slick-prev,
+.slick-next {
+  z-index: 1;
+  color: black;
+}
+
+.slick-dots li button:before {
+  color: #1976d2;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #115293;
+}
