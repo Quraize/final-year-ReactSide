@@ -40,6 +40,8 @@
 
 .nav-sign-up{
    border: 1px !important;
+   margin-left: 1.5rem !important;
+    margin: 1.5rem !important;
    border-color: black !important;
    border-style: solid !important;
    cursor: pointer;

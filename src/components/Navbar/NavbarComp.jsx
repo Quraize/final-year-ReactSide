@@ -125,7 +125,6 @@ export default function NavbarComp() {
               >
                 <Dropdown.Toggle as={"span"}>Conversion</Dropdown.Toggle>
                 <Dropdown.Menu as={"div"} variant={"dark"} className="nav-dropdown-menu">
-                  <Dropdown.Item href="/translation">Translation</Dropdown.Item>
                   <Dropdown.Item href="/texttospeech">Text-to-Speech</Dropdown.Item>
                   <Dropdown.Divider />
                   <Dropdown.Item href="/texttoimage">Text-to-Image</Dropdown.Item>
@@ -148,7 +147,8 @@ export default function NavbarComp() {
                   color: isHoveringSignOut ? "#1976d2" : "#000", // Hover color change
                   fontSize: "20px",
                   marginLeft: "20px",
-                  marginTop: "10px"
+                  marginTop: "10px",
+                  marginRight:"40px"
                 }}
               >
                 <FaSignOutAlt /> {/* FontAwesome Sign Out Icon */}

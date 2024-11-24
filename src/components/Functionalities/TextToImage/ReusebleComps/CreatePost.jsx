@@ -1,9 +1,8 @@
-/* eslint-disable react/prop-types */
+import React, { useState, useMemo, useEffect } from "react";
+import { Box, Typography, CircularProgress } from "@mui/material";
+import Lottie from "lottie-react";
 import AnimationData1 from "../../../../assets/texttoimage.json";
 import Loader from "../../../../assets/imageloader.json";
-import Lottie from "lottie-react";
-import "./CreatePostStyles.css";
-import { useState, useMemo, useEffect } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -31,18 +30,14 @@ export default function CreatePost({ newPrompt }) {
           setLoading(false);
 
           if (!response.ok || imageData.success === false) {
-            // Show error toast if the generation fails
             toast.error(imageData.message || "Failed to generate image.");
             return;
           }
 
-          // On success, update image state and show success toast
           setImage(`data:image/jpeg;base64,${imageData.photo}`);
-          toast.success("Image generated successfully!");
         } catch (error) {
           setLoading(false);
-          // Show error toast on fetch error
-          toast.error(error.message || "An error occurred while generating image.");
+          toast.error(error.message || "An error occurred while generating the image.");
         }
       }
     },
@@ -54,21 +49,57 @@ export default function CreatePost({ newPrompt }) {
   }, [handleGeneration, newPrompt]);
 
   return (
-    <div>
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        width: "100%",
+        minHeight: "100%",
+        px: { xs: 2, sm: 4 },
+        py: { xs: 4, sm: 6 },
+        backgroundColor: "transparent",
+      }}
+    >
       {loading ? (
-        <Lottie animationData={Loader} className="create-post-preview" />
+        <Lottie animationData={Loader} />
       ) : image ? (
-        <img
-          src={image}
-          alt={newPrompt}
-          width={650}
-          height={650}
-          className="create-post-image-self"
-          data-aos="zoom-in"
-        />
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            mt: 2,
+          }}
+        >
+          <img
+            src={image}
+            alt={newPrompt}
+            width={450}
+            height={450}
+            style={{
+              borderRadius: "12px",
+              boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)",
+              objectFit: "cover",
+              maxWidth: "100%",
+            }}
+            data-aos="zoom-in"
+          />
+          <Typography
+            variant="body1"
+            sx={{
+              mt: 2,
+              color: "#333",
+              fontWeight: "bold",
+            }}
+          >
+            Prompt: {newPrompt}
+          </Typography>
+        </Box>
       ) : (
-        <Lottie animationData={AnimationData1} className="create-post-preview" />
+        <Lottie animationData={AnimationData1}/>
       )}
-    </div>
+    </Box>
   );
 }
