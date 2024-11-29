@@ -6,6 +6,8 @@ import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { toast} from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { getRandomPrompt } from "../../../Util/TextToImageRandomPrompt";
 import CreatePost from "./ReusebleComps/CreatePost";
 import Suggestions from "./ReusebleComps/Suggestions";
@@ -53,6 +55,11 @@ export default function TextToImagePrompt() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!prompt.trim()) {
+      // Show toast error if prompt is empty
+      toast.error("Please enter a prompt before submitting.");
+      return;
+    }
     setLoading(true);
     setTimeout(() => {
       setShowPrompt(prompt);

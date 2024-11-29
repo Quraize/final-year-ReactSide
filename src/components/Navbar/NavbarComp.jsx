@@ -60,6 +60,7 @@ export default function NavbarComp() {
             animate={isHoveringLogo ? "hoverFinale" : "final"}
             onHoverStart={() => setIsHoveringLogo(true)}
             onHoverEnd={() => setIsHoveringLogo(false)}
+            style={{paddingLeft:"20px"}}
           >
             <a href="\">
               <img

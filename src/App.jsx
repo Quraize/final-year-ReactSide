@@ -34,7 +34,7 @@ function App() {
             <Route path="/scoring" element={<LanuageScoring />} />
           </Route>
 
-          {/* Redirect unknown routes to Sign In */}
+          {/* Redirect unknown routes to 404 */}
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </BrowserRouter>

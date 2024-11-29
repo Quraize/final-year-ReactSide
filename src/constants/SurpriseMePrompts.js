@@ -8,8 +8,6 @@ export const SurpriseMePrompts = [
     'An oil painting of robots playing basketball',
     'A painting of a fox in the style of Starry Night',
     'A stained glass window depicting a hamburger and french fries',
-    'A gangster looking cat with dogs as his bodygaurd',
-    'A mafia looking panda getting out of the car',
     'One piece character wearing suite and sneakers',
     'Two futuristic towers with a skybridge covered in lush foliage, digital art',
     'A samurai riding a Horse on Mars, lomography',
