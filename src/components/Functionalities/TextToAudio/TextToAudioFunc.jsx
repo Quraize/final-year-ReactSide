@@ -36,13 +36,6 @@ const SuggestionItems = [
 ];
 
 const languages = {
-  urdu: {
-    dispayName: "Urdu",
-    speaker: [
-      { name: "Male", value: "urdu_male" },
-      { name: "Female", value: "urdu_female" },
-    ],
-  },
   hindi: {
     dispayName: "Hindi",
     speaker: [
