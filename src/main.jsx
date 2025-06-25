@@ -6,13 +6,13 @@ import "./index.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Provider } from "react-redux";
-import store from "./store/store.js";
+// import store from "./store/store.js";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <Provider store={store}>
-      <ToastContainer />
-      <App />
-    </Provider>
+    {/* <Provider store={store}> */}
+    <ToastContainer />
+    <App />
+    {/* </Provider> */}
   </React.StrictMode>
 );
